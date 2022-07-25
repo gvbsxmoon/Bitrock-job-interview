@@ -1,0 +1,52 @@
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    margin-bottom: 40px;
+    position: relative;
+
+    &_interrupt {
+        color: #24a0ed;
+        font-size: 20px;
+        transition: all .1s ease-in;
+        position: absolute;
+    }
+
+
+    &-button {
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: #b3b3b3;
+        font-size: 16px;
+        transition: all .1s ease-in;
+
+        &:disabled {
+            pointer-events: none;
+            opacity: .3;
+        }
+
+        &:hover {
+            color: #24a0ed;
+            transform: scale(1.1);
+        }
+    }
+
+    &_left {
+        margin-right: 5px;
+        &:hover ~ .pagination_interrupt {
+            transform: translateX(-3px);
+        }
+    }
+
+    &_right {
+        margin-left: 5px;
+        &:hover ~ .pagination_interrupt {
+            transform: translateX(3px);
+        }
+    }
+}

@@ -1,0 +1,76 @@
+html {
+	overflow-y: scroll;
+}
+
+.modal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-width: 600px;
+	font-family: sans-serif;
+	margin: auto;
+
+	&_char-image {
+		border-radius: 50%;
+		margin: 40px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+	}
+
+	&_char-name {
+		font-size: 32px;
+		color: #24a0ed;
+		margin-bottom: 6px;
+	}
+
+	&_char-details {
+		font-weight: 200;
+		margin-block: 10px;
+		text-align: center;
+	}
+
+	&_show-episode {
+		display: flex;
+		margin: 40px 0 10px 0;
+
+		.chevron {
+			margin-left: 10px;
+			stroke-width: 0.5;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	&_episode-list {
+		text-align: center;
+		display: none;
+		margin-bottom: 40px;
+	}
+
+	input {
+		opacity: 0;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+
+		&:checked {
+			~ .modal_episode-list {
+				display: block;
+			}
+
+			~ label .chevron {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&_episode-detail {
+		font-size: 14px;
+		margin-top: 12px;
+
+		strong {
+			font-weight: 600;
+			color: #24a0ed;
+			opacity: 0.8;
+		}
+	}
+}

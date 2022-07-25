@@ -1,0 +1,55 @@
+.search {
+	position: relative;
+	margin: 40px auto;
+	display: flex;
+	width: 400px;
+	justify-content: center;
+
+	&_input {
+		padding: 5px 10px;
+		width: 100%;
+		border: 1px solid #b3b3b3;
+        border-radius: 8px;
+        outline: none;
+
+		transition: all 0.1s ease-in;
+
+		&:focus {
+			border: 2px solid rgba($color: #24a0ed, $alpha: .8);
+
+			~ .search_label {
+				font-size: 10px;
+				top: 0;
+				color: #24a0ed;
+			}
+		}
+	}
+
+	&_label {
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-family: sans-serif;
+		font-size: 12px;
+		color: #b3b3b3;
+        background-color: white;
+        padding-inline: 1.5px;
+		transition: all 0.1s ease-in;
+	}
+
+	&_action {
+		position: absolute;
+		right: 5px;
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: #5e5e5e;
+
+        &:hover {
+            color: #24a0ed;
+        }
+	}
+}
